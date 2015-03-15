@@ -1,0 +1,37 @@
+            {% extends "OCPAppliBundle::layout.html.twig"%}
+            {% block title %}{{ parent() }}{% endblock %}
+            {% block body %}
+                <br><br><br>
+                <div align='center'><h1>liste des points de destockage</h1></div>
+                    <div class="well well-small " align="center">
+    <table border="1" width="50%"  class="table table-bordered">
+               
+                    <tr>
+                        <th>Point 1</th>
+                        <th>Point 2</th>
+                        <th>Point 3</th>
+                        <th>Point 4</th>
+                        <th>modifier</th>
+                        <th>supprimer</th>
+                    </tr>
+                    
+                   {%  for p in  cordes %}
+                       
+                       <tr class="success">
+                           <td>[ {{p.a}}, {{p.b}} ]</td>
+                           <td>[ {{p.c}}, {{p.d}} ]</td>
+                           <td>[ {{p.e}}, {{p.f}} ]</td>
+                           
+                           <td>[ {{p.g}}, {{p.h}} ]</td>
+                           <td><a class="btn btn-info"  href="{{ path('ocp_appli_editCorDes',{'id':p.id})}}">modifier<a></td>
+                                       <td><a class="btn btn-danger" href="{{ path('ocp_appli_deleteCorDes',{'id':p.id})}}">supprimer</td>
+                       </tr>
+                       
+                       {%endfor%}
+                    
+                        
+                    
+                </table>
+                    </div>
+             
+            {% endblock %}

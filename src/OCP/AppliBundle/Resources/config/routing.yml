@@ -1,0 +1,188 @@
+ocp_appli_acceuil:
+    path:   /
+    defaults: { _controller: OCPAppliBundle:GestionStock:index }
+
+ocp_appli_parc:
+    path:   /parc/
+    defaults: { _controller: OCPAppliBundle:Parc:index }
+    
+ocp_appli_addparc:
+    path:   /addparc/
+    defaults: { _controller: OCPAppliBundle:Parc:add }
+    
+ocp_appli_editparc:
+    path:   /editparc/{id}
+    defaults: { _controller: OCPAppliBundle:Parc:edit }
+    
+ocp_appli_deleteparc:
+    path:   /deleteparc/{id}
+    defaults: { _controller: OCPAppliBundle:Parc:delete }
+    
+ocp_appli_showparc:
+    path:   /showparc/
+    defaults: { _controller: OCPAppliBundle:Parc:show }
+    
+    
+    
+ocp_appli_train:
+    path:   /train/
+    defaults: { _controller: OCPAppliBundle:Train:index }
+    
+ocp_appli_addtrain:
+    path:   /addtrain/
+    defaults: { _controller: OCPAppliBundle:Train:add }
+    
+ocp_appli_edittrain:
+    path:   /edittrain/{id}
+    defaults: { _controller: OCPAppliBundle:Train:edit }
+    
+ocp_appli_deletetrain:
+    path:   /deletetrain/{id}
+    defaults: { _controller: OCPAppliBundle:Train:delete }
+    
+ocp_appli_showtrain:
+    path:   /showtrain/
+    defaults: { _controller: OCPAppliBundle:Train:show }
+
+
+ocp_appli_recu:
+    path:   /recu/
+    defaults: { _controller: OCPAppliBundle:Recu:index }
+    
+ocp_appli_addrecu:
+    path:   /addrecu/
+    defaults: { _controller: OCPAppliBundle:Recu:add }
+    
+ocp_appli_editrecu:
+    path:   /editrecu/{id}
+    defaults: { _controller: OCPAppliBundle:Recu:edit }
+    
+ocp_appli_deleterecu:
+    path:   /deleterecu/{id}
+    defaults: { _controller: OCPAppliBundle:Recu:delete }
+    
+ocp_appli_showrecu:
+    path:   /showrecu/
+    defaults: { _controller: OCPAppliBundle:Recu:show }
+ocp_appli_rechercherecu:
+    path:   /rechercherecu/
+    defaults: { _controller: OCPAppliBundle:Recu:recherche }
+ocp_appli_recherchetrarecu:
+    path:   /recherchetra/
+    defaults: { _controller: OCPAppliBundle:Recu:recherchetraitement }
+ 
+ 
+ 
+ocp_appli_terrain:
+    path:   /terrain/
+    defaults: { _controller: OCPAppliBundle:Terrain:index }
+    
+ocp_appli_addterrain:
+    path:   /addterrain/
+    defaults: { _controller: OCPAppliBundle:Terrain:add }
+    
+ocp_appli_editterrain:
+    path:   /editterrain/{id}
+    defaults: { _controller: OCPAppliBundle:Terrain:edit }
+    
+ocp_appli_deleteterrain:
+    path:   /deleteterrain/{id}
+    defaults: { _controller: OCPAppliBundle:Terrain:delete }
+    
+ocp_appli_showterrain:
+    path:   /showterrain/
+    defaults: { _controller: OCPAppliBundle:Terrain:show }
+
+ocp_appli_serachtrain:
+    path:   /searchtrain/
+    defaults: { _controller: OCPAppliBundle:Train:search }
+    
+ocp_appli_analyse:
+    path:   /analyse/
+    defaults: { _controller: OCPAppliBundle:Analyse:index }
+    
+ocp_appli_addanalyse:
+    path:   /addanalyse/
+    defaults: { _controller: OCPAppliBundle:Analyse:add }
+    
+ocp_appli_editanalyse:
+    path:   /editanalyse/{id}
+    defaults: { _controller: OCPAppliBundle:Analyse:edit }
+    
+ocp_appli_deleteanalyse:
+    path:   /deleteanalyse/{id}
+    defaults: { _controller: OCPAppliBundle:Analyse:delete }
+    
+ocp_appli_showanalyse:
+    path:   /showanalyse/
+    defaults: { _controller: OCPAppliBundle:Analyse:show }
+    
+ocp_appli_Destockage:
+    path:   /destockage/
+    defaults: { _controller: OCPAppliBundle:Destockage:index }
+    
+ocp_appli_adddestockage:
+    path:   /adddestockage/
+    defaults: { _controller: OCPAppliBundle:Destockage:add }
+    
+ocp_appli_editdestockage:
+    path:   /editdestockage/{id}
+    defaults: { _controller: OCPAppliBundle:Destockage:edit }
+    
+ocp_appli_deletedestockage:
+    path:   /deletedestockage/{id}
+    defaults: { _controller: OCPAppliBundle:Destockage:delete }
+    
+ocp_appli_showdestockage:
+    path:   /showdestockage/
+    defaults: { _controller: OCPAppliBundle:Destockage:show }
+    
+ocp_appli_melange:
+    path:   /melange/
+    defaults: { _controller: OCPAppliBundle:Melange:index }
+    
+ocp_appli_addmelange:
+    path:   /addmelange/
+    defaults: { _controller: OCPAppliBundle:Melange:add }
+    
+ocp_appli_editmelange:
+    path:   /editmelange/{id}
+    defaults: { _controller: OCPAppliBundle:Melange:edit }
+    
+ocp_appli_deletemelange:
+    path:   /deletemelange/{id}
+    defaults: { _controller: OCPAppliBundle:Melange:delete }
+    
+ocp_appli_showmelange:
+    path:   /showmelange/
+    defaults: { _controller: OCPAppliBundle:Melange:show }
+
+
+ocp_appli_CorDes:
+    path:   /cordes/
+    defaults: { _controller: OCPAppliBundle:CorDes:index }
+    
+ocp_appli_addCorDes:
+    path:   /addcordes/
+    defaults: { _controller: OCPAppliBundle:CorDes:add }
+    
+ocp_appli_editCorDes:
+    path:   /editcordes/{id}
+    defaults: { _controller: OCPAppliBundle:CorDes:edit }
+    
+ocp_appli_deleteCorDes:
+    path:   /deletecordes/{id}
+    defaults: { _controller: OCPAppliBundle:CorDes:delete }
+    
+ocp_appli_showCorDes:
+    path:   /showcordes/
+    defaults: { _controller: OCPAppliBundle:CorDes:show }
+ocp_appli_rech:
+    path:   /rech/
+    defaults: { _controller: OCPAppliBundle:Rech:add }
+ocp_appli_rechercheparc:
+    path:   /recherche/
+    defaults: { _controller: OCPAppliBundle:Parc:recherche }
+ocp_appli_recherchetraparc:
+    path:   /recherchetra/
+    defaults: { _controller: OCPAppliBundle:Parc:recherchetraitement }

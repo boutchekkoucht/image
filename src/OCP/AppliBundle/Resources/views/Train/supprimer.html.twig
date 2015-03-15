@@ -1,0 +1,24 @@
+            {% extends "OCPAppliBundle::layout.html.twig"%}
+            {% block title %}{{ parent() }}{% endblock %}
+            {% block body %}
+                        <div class="row">
+   
+               
+             
+           
+            
+                           <div align="center"><h2>
+Etes-vous certain de vouloir supprimer le train dont le numero est:"{{
+train.numero }}" ?
+</h2>
+
+<form  action="{{ path('ocp_appli_deletetrain', {'id': train.id}) }}"method="post">
+
+<input type="submit" value="Supprimer" class="btn btn-danger" />
+<a href="{{ path('ocp_appli_showtrain') }}" class="btn btn-primary">Retour</a>
+
+{{ form_rest(form) }}
+</form>
+
+            </div>  
+            {% endblock %}

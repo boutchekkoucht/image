@@ -1,0 +1,4 @@
+services:
+#    ocp_appli.example:
+#        class: OCP\AppliBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

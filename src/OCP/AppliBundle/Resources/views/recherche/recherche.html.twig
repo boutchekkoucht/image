@@ -1,0 +1,19 @@
+            {% extends "OCPAppliBundle::layout.html.twig"%}
+            {% block title %}{{ parent() }}{% endblock %}
+            {% block body %}
+                        <div class="row">
+   
+               
+             
+                
+            <div class="well" align="center">
+                  <form id="addtrain" method="post" {{ form_enctype(form) }} action="#">
+            {{ form_widget(form) }}
+      
+          
+        
+            <input type="submit" class="btn btn-primary" />
+            
+              </form>
+            </div> 
+            {% endblock %}

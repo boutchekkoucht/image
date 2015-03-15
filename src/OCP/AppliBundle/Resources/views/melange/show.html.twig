@@ -1,0 +1,28 @@
+            {% extends "OCPAppliBundle::layout.html.twig"%}
+            {% block title %}{{ parent() }}{% endblock %}
+            {% block body %}
+                <br><br><br>   
+                <table class='table table-hover'>
+                    <tr>
+                        <th>destockageId</th>
+                        <th>pourcentage</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    
+                   {%  for p in  melange %}
+                       
+                       <tr>
+                           <td></td>
+                           <td>{{p.pourcentage}}%</td>
+                           <td><a  href="{{ path('ocp_appli_editmelange',{'id':p.id})}}">modifier<a></td>
+                           <td><a  href="{{ path('ocp_appli_deletemelange',{'id':p.id})}}">supprimer</td>
+                       </tr>
+                       
+                       {%endfor%}
+                    
+                        
+                    
+                </table>
+             
+            {% endblock %}

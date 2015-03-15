@@ -1,0 +1,54 @@
+            {% extends "OCPAppliBundle::layout.html.twig"%}
+            {% block title %}{{ parent() }}{% endblock %}
+            {% block body %}
+                <br><br><br>  
+                     <div align="center"><h1>Liste des terrains </h1></div>
+                     <div class="well well-small " >
+                <table class='table table-bordered'>
+                    <tr  >
+                        <th>debu partie 1</th>
+                        <th>fin  partie 1</th>
+                        <th>debut  partie 2</th>
+                        <th>fin  partie 2</th>
+                        <th>hauteur</th>
+                        <th>date du recu</th>
+                         <th>recu id</th>
+                          <th>NumTrain</th><th>H2O</th><th>P2O5</th><th>MgO</th><th>SiO2</th> 
+        <th>CL-</th> <th>Cd</th>
+ 
+
+                        <th>parc id</th>
+                     
+                     
+                        <th>modifier</th>
+                        <th>supprimer</th>
+                    </tr>
+                    
+                   {%  for p in  terrain %}
+                       
+                       <tr class="success">
+                           <td>{{p.p1debut}}</td>
+                           <td>{{p.p1fin}}</td>
+                           <th>{{p.p2debut}}</th>
+                            <th>{{p.p2fin}}</th>
+                            <th>{{p.hauteur}}</th>
+                            <th>{{p.recu.date|date('d/m/Y')}}</th>
+                            <th>{{p.recu.id}}</th>
+                         <td> {{p.recu.analyse.h2o}}</td>
+        <td>{{p.recu.analyse.p2o5}}</td><td>{{p.recu.analyse.mgo}}</td><td>{{p.recu.analyse.sio2}}</td> 
+        <td>{{p.recu.analyse.cl}}</td> <td>{{p.recu.analyse.cd}}</td><td>
+                            <th>{{p.parc.id}}</th>
+               
+                            
+                            <td><a class="btn btn-info" href="{{ path('ocp_appli_editterrain',{'id':p.id})}}">modifier<a></td>
+                                        <td><a class="btn btn-danger" href="{{ path('ocp_appli_deleteterrain',{'id':p.id})}}">supprimer</td>
+                       </tr>
+                       
+                       {%endfor%}
+                    
+                        
+                    
+                </table>
+                       </div>
+             
+            {% endblock %}

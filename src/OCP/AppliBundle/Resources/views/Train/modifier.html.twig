@@ -1,0 +1,18 @@
+            {% extends "OCPAppliBundle::layout.html.twig"%}
+            {% block title %}{{ parent() }}{% endblock %}
+            {% block body %}
+                        <div class="row">
+                            
+   
+               
+             
+                
+            <div align="center"><h1>Modifier un Train</h1></div>
+            <div class="well col-lg-5 col-lg-offset-4" align="center" >
+             
+                <form method="post" {{ form_enctype(form) }} action="{{path('ocp_appli_edittrain',{'id':train.id})}}">
+            {{ form_widget(form) }}
+            <input type="submit" value="modifier" class="btn btn-primary" />
+            </form>
+            </div>  
+            {% endblock %}

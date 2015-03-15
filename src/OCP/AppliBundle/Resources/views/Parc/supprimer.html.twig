@@ -1,0 +1,23 @@
+            {% extends "OCPAppliBundle::layout.html.twig"%}
+            {% block title %}{{ parent() }}{% endblock %}
+            {% block body %}
+                        <div class="row">
+   
+               
+             
+                
+                                      <div align="center"><h2>
+Etes-vous certain de vouloir supprimer le parc dont le nom est:"{{
+parc.nom }}" ?
+</h2>
+
+<form  action="{{ path('ocp_appli_deleteparc', {'id': parc.id}) }}"method="post">
+
+<input type="submit" value="Supprimer" class="btn btn-danger" />
+<a href="{{ path('ocp_appli_showparc') }}" class="btn btn-primary">Retour</a>
+
+{{ form_rest(form) }}
+</form>
+
+            </div>  
+            {% endblock %}

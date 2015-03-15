@@ -1,0 +1,7 @@
+user_user_homepage:
+    path:     /
+    defaults: { _controller: FOSUserBundle:Profile:show}
+user_user_index:
+    path:     /
+    defaults: { _controller: UserUserBundle:Default:index }
+ 

@@ -1,0 +1,35 @@
+            {% extends "OCPAppliBundle::layout.html.twig"%}
+            {% block title %}{{ parent() }}{% endblock %}
+            {% block body %}
+                <br><br><br>  
+                         <div align="center"><h1>liste des trains</h1></div>
+                    <div class="well well-small " align="center">
+    <table border="1" width="50%"  class="table table-bordered"
+               
+              
+                    <tr>
+                        <th>id</th>
+                        <th>numero</th>
+                        <th>modifier</th>
+                        <th>supprimer</th>
+                    </tr>
+                    
+                   {%  for p in  train %}
+                       
+                       <tr class="success">
+                           <td>{{p.id}}</td>
+                           <td>{{p.numero}}</td>
+
+                           <td><a class=" btn btn-info"id="editTrain" href="{{ path('ocp_appli_edittrain',{'id':p.id})}}">modifier<a></td>
+                                       <td><a class=" btn btn-danger" href="{{ path('ocp_appli_deletetrain',{'id':p.id})}}">supprimer</td>
+                       </tr>
+                       
+                       {%endfor%}
+                    
+                        
+                    
+                </table>
+                    </div>
+                   
+   
+            {% endblock %}

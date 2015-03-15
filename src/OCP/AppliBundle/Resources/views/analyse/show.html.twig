@@ -1,0 +1,41 @@
+            {% extends "OCPAppliBundle::layout.html.twig"%}
+            {% block title %}{{ parent() }}{% endblock %}
+            {% block body %}
+                <br><br><br>   
+                     <div align='center'><h1>liste des analyses</h1></div>
+                    <div class="well well-small " align="center">
+    <table border="1" width="50%"  class="table table-bordered">
+                    <tr>
+                        <th>id</th>
+                        <th>H20</th>
+                        <th>P2O5</th>
+                        <th>Mgo</th>
+                         <th>Sio2</th>
+                          <th>CL-</th>
+                           <th>CD</th>
+                            <th>modifier</th>
+                             <th>supprimer</th>
+                    </tr>
+                    
+                   {%  for p in  analyse %}
+                       
+                       <tr class="success">
+                           <td>{{p.id}}</td>
+                           <td>{{p.h2o}}</td>
+                               <td>{{p.p2o5}}</td>
+                                   <td>{{p.mgo}}</td>
+                                       <td>{{p.sio2}}</td>
+                                           <td>{{p.cl}}</td>
+                                            <td>{{p.cd}}</td>
+                                           <td><a class="btn btn-info" href="{{ path('ocp_appli_editanalyse',{'id':p.id})}}">modifier<a></td>
+                                                       <td><a class="btn btn-danger" href="{{ path('ocp_appli_deleteanalyse',{'id':p.id})}}">supprimer</td>
+                       </tr>
+                       
+                       {%endfor%}
+      
+                        
+                    
+                </table>
+                    </div>
+             
+            {% endblock %}

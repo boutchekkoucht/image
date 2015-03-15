@@ -1,0 +1,53 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+
+<div class="col-md-3"></div>
+<div class="container   col-md-5 well ">
+<form action="{{ path("fos_user_security_check") }}" method="post"  >
+    <legend class="text-center">
+        <img src="{{ asset('img/photo.gif') }}" class="img-circle img-rounded" alt="login"></img>
+    </legend>
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    <div  class="form-group">
+        
+    <label for="username"  >{{ 'security.login.username'|trans }}</label>
+    <input type="text"  placeholder="{{ 'security.login.username'|trans }}" class="form-control" id="username" name="_username" value="{{ last_username }}" required="required" />
+    </div>
+    <div  class="form-group">
+    <label for="password" >{{ 'security.login.password'|trans }}</label>
+    <input type="password" placeholder="{{ 'security.login.password'|trans }}" id="password" name="_password" required="required" class="form-control" />
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-3">
+        <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+        <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+        </div>
+    </div>
+    <div class="input-group col-md-6 col-md-offset-3">
+    <input type="submit"  class="btn btn-primary btn-block " id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+    
+    </div>
+       {% if error %}
+           <br>
+            <p  class="alert alert-danger text-center"  role="alert"  >               
+                {{ error.messageKey|trans(error.messageData, 'security') }}  
+               
+            </p>
+            
+             <a href="{{ path('fos_user_resetting_request') }}">Mot  passe perdu ?</a>
+              
+     {% endif %}
+     
+     
+ </div>
+        
+    
+ 
+    
+</div>
+<div class="col-md-3">
+ 
+</div>   
+{% endblock fos_user_content %}

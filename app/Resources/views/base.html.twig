@@ -1,0 +1,173 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Gestion  De  Stockage {% endblock %}</title>
+        {% block stylesheets %}
+
+            {% stylesheets
+            'css/bootstrap.css'
+            'css/bootstrap-theme.min.css'
+            'css/bootstrap.min.css'
+            
+            %}
+
+            <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}  
+        {% endblock %}
+
+
+
+    </head>
+    <body class="container">
+        <link rel="icon" type="img/jpg" href="fonts/index.jpg" />
+        <div  class=" row">
+            <ul class="nav nav-tabs navbar-inverse">
+                 
+                     
+                {%  if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    <li>
+                 <a class="btn btn-success" href="{{ path('fos_user_profile_show') }}">Accueil</a>
+                       
+                    </li>
+                           <li  class="col-md-offset-1">
+                        
+                          <div  class="dropdown btn-block">
+                               <button class="btn btn-success" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+
+                                Stockage
+                                <span class="caret" aria-hidden="true"></span>
+
+                            </button>
+                               <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{path('ocp_appli_addparc')}}">ajouter parc</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{path('ocp_appli_addanalyse')}}">ajouter Analyse</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{path('ocp_appli_addtrain')}}">ajouter Train</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{path('ocp_appli_addrecu')}}">ajouter Recu</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">afficher</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">chercher</a></li>
+                                
+                               </ul>
+                    </li>
+                    <li >
+                        
+                          <div class="dropdown btn-block col-md-12">
+                               <button   class="btn btn-success" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+
+                                Destockage
+                                <span class="caret" aria-hidden="true"></span>
+
+                            </button>
+                               <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ path('ocp_appli_addrecu') }}">ajouter Recu</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ path('ocp_appli_addterrain') }}">ajouter Terrain</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ path('ocp_appli_adddestockage') }}">ajouter Destockage</a></li>
+                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ path('ocp_appli_addCorDes') }}">ajouter Coordonnées</a></li>
+                                
+                               </ul>
+                    </li>
+                    <li>
+                                       
+        <img src="/ocp1/web/img/photo.gif" class="img-circle img-rounded" alt="login">
+        </li>
+                    <li>
+                        
+                          <div class="dropdown btn-block col-md-12">
+                               <button  class="btn btn-success" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+
+                                Lavage
+                                <span class="caret" aria-hidden="true"></span>
+
+                            </button>
+                               <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ path('ocp_appli_addrecu') }}">ajouter</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ path('ocp_appli_addrecu') }}">afficher</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ path('ocp_appli_addrecu') }}">chercher</a></li>
+                                
+                               </ul>
+                    </li>
+                    <li>
+                        
+                          <div class="dropdown btn-block col-md-12">
+                               <button  class="btn btn-success" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+
+                                Expedition
+                                <span class="caret" aria-hidden="true"></span>
+
+                            </button>
+                               <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ path('ocp_appli_addrecu') }}">ajouter</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ path('ocp_appli_addrecu') }}">afficher</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ path('ocp_appli_addrecu') }}">chercher</a></li>
+                                
+                               </ul>
+                          </li>
+                         <li  class=" col-md-offset-3">
+                        <div class="dropdown btn-block col-md-12  ">
+                            <button class="btn btn-success"  class="btn btn-default dropdown-toggle " type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+
+                                {{ app.user.username }}
+                                <span class="caret " aria-hidden="true"></span>
+
+                            </button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ path('fos_user_security_logout') }}">Deconncter</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ path('fos_user_profile_show') }}">Mon Compte</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ path('fos_user_profile_edit') }}">Mis a jours</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ path('fos_user_change_password') }}">changer mot passe</a></li>
+
+                            </ul>
+                        
+
+
+
+
+                    </li>
+                {% else %}
+                    <li>
+                       <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                        
+                    </li>
+                    <li>
+                        <a href="{{ path('fos_user_registration_register') }}">{{ 'layout.register'|trans({}, 'FOSUserBundle') }}</a>
+                    </li>
+
+
+
+                {% endif %} 
+
+            </ul>
+             </div>
+            </br>
+
+        </div>
+
+       
+               
+            
+
+                    {% block body %}
+
+                    {% endblock %}
+
+
+
+
+                    {% block javascripts %}
+                        {% javascripts
+                        'js/jquery.js'
+                        'js/bootstrap.min.js'
+            
+            
+                        %}
+                        <script type="text/javascript" src="{{ asset_url }}"></script>
+
+                        {% endjavascripts %}
+                    {% endblock %}
+
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                    {% block document_ready %}{% endblock %}
+                        });
+                </script>
+        </body>
+</html>
